@@ -1,2 +1,2 @@
-# Neia-Python
-Neia python version
+# Neia-Lua
+Neia But made with Lua Love
