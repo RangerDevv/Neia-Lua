@@ -41,5 +41,4 @@ function love.draw()
     if player.health == 0 then
         love.graphics.print("You died!", 50, 170 , 0, 2, 2 )
     end
-    love.graphics.line(x1, y1, x2, y2)
 end
