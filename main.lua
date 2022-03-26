@@ -15,14 +15,10 @@ function love.load()
         gold = 0,
         inventory = {},
     }
-    x1 = 0
-    y1 = 0
-    x2 = mouse_x
-    y2 = mouse_y
 end
 
 function love.update(dt)
-    player.health = player.health - 1
+    player.health = player.health
     if player.health <= 0 then
         player.health = 0
     end
@@ -36,7 +32,6 @@ function love.draw()
     love.graphics.print("Defense: " .. player.defense, 10, 90)
     love.graphics.print("Heal: " .. player.heal, 10, 110)
     love.graphics.print("Gold: " .. player.gold, 10, 130)
-
     love.graphics.rectangle("fill", 10, 150, player.health / player.max_health * 100, 20)
     if player.health == 0 then
         love.graphics.print("You died!", 50, 170 , 0, 2, 2 )
