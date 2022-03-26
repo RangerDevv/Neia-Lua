@@ -3,6 +3,7 @@ function love.load()
     love.window.setTitle("Neia")
     love.window.setMode(800, 600, {resizable = false})
     love.graphics.setBackgroundColor(0, 0, 0)
+    love.graphics.setDefaultFilter("nearest", "nearest")
     player = {
         health = 100,
         max_health = 100,
@@ -14,6 +15,10 @@ function love.load()
         gold = 0,
         inventory = {},
     }
+    x1 = 0
+    y1 = 0
+    x2 = mouse_x
+    y2 = mouse_y
 end
 
 function love.update(dt)
@@ -33,4 +38,8 @@ function love.draw()
     love.graphics.print("Gold: " .. player.gold, 10, 130)
 
     love.graphics.rectangle("fill", 10, 150, player.health / player.max_health * 100, 20)
+    if player.health == 0 then
+        love.graphics.print("You died!", 50, 170 , 0, 2, 2 )
+    end
+    love.graphics.line(x1, y1, x2, y2)
 end
