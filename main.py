@@ -7,37 +7,35 @@ import os
 import time
 import random
 import math
-from rooms import prison
+from rooms import room1 as room1
 
 # Initializes the pygame module
 pygame.init()
 # Sets the screen size
-screen_size = (800, 600)
+screen_width = 800
+screen_height = 600
 # Sets the screen size to the screen_size variable
-screen = pygame.display.set_mode(screen_size)
+screen = pygame.display.set_mode((screen_width, screen_height))
 
 #setting the besic stuff
 pygame.display.set_caption("Neia")
 background_color = (0, 0, 0)
-font = pygame.font.SysFont('arial', 25)
+font = pygame.font.SysFont(None, 25)
 
 # variables 
 textvar = "Neia"
 
-while True:
+while True: # the main game loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
     text = font.render(textvar, True, (255, 255, 255))
-    screen.blit(text, (10, 10))
+    screen.blit(text, ( screen_width/2 , screen_height/2 ))
     pygame.display.update()
     time.sleep(1)
     # Clears the screen
     screen.fill(background_color)
-    textvar = "Press F to start"
-    text = font.render(textvar, True, (255, 255, 255))
-    screen.blit(text, (10, 10))
-    pygame.display.update()
+    textvar = "Starting the game..."
     time.sleep(1)
-    prison.prisonroom()
+    room1.prisonroom()
