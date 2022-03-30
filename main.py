@@ -7,7 +7,7 @@ import os
 import time
 import random
 import math
-from rooms import room1 as room1
+from rooms import room1
 
 # Initializes the pygame module
 pygame.init()
