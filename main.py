@@ -7,7 +7,7 @@ import os
 import time
 import random
 import math
-from rooms.vars import shared
+from assets.everything import shared
 from rooms import room1
 
 # Initializes the pygame module
