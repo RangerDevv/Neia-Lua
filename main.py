@@ -7,6 +7,7 @@ import os
 import time
 import random
 import math
+from rooms.vars import shared
 from rooms import room1
 
 # Initializes the pygame module
@@ -22,20 +23,18 @@ pygame.display.set_caption("Neia")
 background_color = (0, 0, 0)
 font = pygame.font.SysFont(None, 25)
 
-# variables 
-textvar = "Neia"
 
 while True: # the main game loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-    text = font.render(textvar, True, (255, 255, 255))
+    text = font.render(shared.Textvar, True, (255, 255, 255))
     screen.blit(text, ( screen_width/2 , screen_height/2 ))
     pygame.display.update()
     time.sleep(1)
     # Clears the screen
     screen.fill(background_color)
-    textvar = "Starting the game..."
+    shared.Textvar = "Starting the game"
     time.sleep(1)
-    room1.prisonroom()
+    room1.room1()
