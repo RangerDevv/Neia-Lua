@@ -37,6 +37,5 @@ while True: # the main game loop
     text = font.render(shared.Textvar, True, (255, 255, 255))
     screen.blit(text, ( shared.screen_width/2 , shared.screen_height/2 ))
     pygame.display.update()
-    time.sleep(5)
-    room1.room1()
-    break
+    time.sleep(2)
+    room1.prison()

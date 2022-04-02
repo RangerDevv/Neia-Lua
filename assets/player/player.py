@@ -1,11 +1,12 @@
 # make a player object
-player = {
-    "name": "",
-    "health": 100,
-    "maxhealth": 100,
-    "damage": 10,
-    "defense": 10,
-    "armor": 5,
-    "gold": 0,
-    "inventory": [],
-}
+from assets.everything.shared import Health
+
+
+health  = 100
+max_health = 100
+level = 1
+experience = 0
+gold = 0
+attack = 10
+defense = 8
+heal = 5
