@@ -28,7 +28,4 @@ while True: # the main game loop
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-    text = font.render(shared.Textvar, True, (255, 255, 255))
-    screen.blit(text, ( shared.screen_width/2 , shared.screen_height/2 ))
-    pygame.display.update()
-    time.sleep(1)
+    screen.fill(background_color)
