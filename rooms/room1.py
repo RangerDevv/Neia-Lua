@@ -26,15 +26,3 @@ def prison():
                 pygame.quit()
                 sys.exit()
         screen.fill(background_color)
-        #text
-        Text = font.render("Room 1", True, (255, 255, 255))
-        screen.blit(Text, [10, 10])
-        #player stats
-        Health = font.render("Health: " + str(shared.Health), True, (255, 255, 255))
-        screen.blit(Health, [10, 30])
-        Gold = font.render("Gold: " + str(shared.Gold), True, (255, 255, 255))
-        screen.blit(Gold, [10, 50])
-        Level = font.render("Level: " + str(shared.Level), True, (255, 255, 255))
-        screen.blit(Level, [10, 70])
-        Experience = font.render("Experience: " + str(shared.Experience), True, (255, 255, 255))
-        screen.blit(Experience, [10, 90])

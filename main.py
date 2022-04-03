@@ -1,4 +1,5 @@
 # Imports the necessary modules
+from distutils.command.build_scripts import first_line_re
 from textwrap import fill
 from turtle import clear
 import pygame
@@ -31,11 +32,3 @@ while True: # the main game loop
     screen.blit(text, ( shared.screen_width/2 , shared.screen_height/2 ))
     pygame.display.update()
     time.sleep(1)
-    # Clears the screen
-    screen.fill(background_color)
-    shared.Textvar = "Starting the game"
-    text = font.render(shared.Textvar, True, (255, 255, 255))
-    screen.blit(text, ( shared.screen_width/2 , shared.screen_height/2 ))
-    pygame.display.update()
-    time.sleep(2)
-    room1.prison()
