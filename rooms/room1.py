@@ -1,6 +1,8 @@
+from cgitb import text
 import pygame
 import sys
 import os
+import time
 currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
@@ -26,3 +28,6 @@ def prison():
                 pygame.quit()
                 sys.exit()
         screen.fill(background_color)
+        text = font.render("this is the prison!" , True, (255, 255, 255))
+        screen.blit(text, [200, 200])
+        pygame.display.update()   

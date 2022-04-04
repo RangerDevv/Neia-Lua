@@ -1,10 +1,11 @@
 # Imports the necessary modules
+from cgitb import text
+from codecs import backslashreplace_errors
 from distutils.command.build_scripts import first_line_re
-from textwrap import fill
-from turtle import clear
+from multiprocessing.connection import wait
+from threading import Timer
 import pygame
 import sys
-import os
 import time
 import random
 import math
@@ -21,6 +22,7 @@ screen = pygame.display.set_mode((shared.screen_width, shared.screen_height))
 pygame.display.set_caption("Neia")
 background_color = (0, 0, 0)
 font = pygame.font.SysFont(None, 25)
+isplaying = False
 
 
 while True: # the main game loop
@@ -28,4 +30,14 @@ while True: # the main game loop
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-    screen.fill(background_color)
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_RETURN:
+            text = font.render("Welcome to Neia!" , True, (255, 255, 255))
+            screen.blit(text, [200, 200])
+            pygame.display.update()
+            time.sleep(2)
+            background_color = (0, 0, 0)
+            text = font.render("Loading the game" , True, (255, 255, 255))
+            screen.blit(text, [200, 200])
+            pygame.display.update()
+            room1.prison()
