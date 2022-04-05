@@ -1,6 +1,4 @@
 # make a player object
-from assets.everything.shared import Health
-
 
 health  = 100
 max_health = 100

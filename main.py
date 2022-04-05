@@ -74,4 +74,9 @@ while True:
                 pygame.quit()
                 sys.exit()
             if event.key == pygame.K_a:
-                print("Credits")
+                screen.fill(BLACK)
+                Content = font2.render("Credits:", True, (255, 255, 255))
+                screen.blit(Content, (SCREEN_WIDTH / 2 - Content.get_width() / 2, 100))
+                Develpoer = font2.render("Develpoer: Ranger", True, (255, 255, 255))
+                screen.blit(Develpoer, (SCREEN_WIDTH / 2 - Develpoer.get_width() / 2, 200))
+                Helper = font2.render("Helper: Avidcoder123", True, (255, 255, 255))
