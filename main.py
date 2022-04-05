@@ -5,6 +5,8 @@ import os
 import sys
 import time
 
+from rooms import room1
+
 # variables
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -51,3 +53,19 @@ while True:
     Content = font2.render("[A] Credits", True, (255, 255, 255))
     screen.blit(Content, (SCREEN_WIDTH / 2 - Content.get_width() / 2, 400))
     pygame.display.update()
+
+    # event loop
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_w:
+                room1.test_room1()
+                break
+            if event.key == pygame.K_q:
+                pygame.quit()
+                sys.exit()
+            if event.key == pygame.K_a:
+                print("Credits")
+                break
