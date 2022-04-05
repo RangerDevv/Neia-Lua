@@ -1,2 +1,2 @@
-# Neia-Lua
-Neia But made with Lua Love
+# Neia-Python
+Neia But made with Pygame. (python)
