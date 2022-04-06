@@ -44,6 +44,10 @@ def test_room1():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+        
+        pygame.display.update()      
+        screen.fill(BLACK)
+
         # player stats
         health = player.health
         max_health = player.max_health
@@ -63,17 +67,14 @@ def test_room1():
         screen.blit(Quit, (SCREEN_WIDTH / 2 - Quit.get_width() / 2, SCREEN_HEIGHT - 50))
 
         for event in pygame.event.get():
-            Textvar = "You are in the prison. You dont know how you got here. You have to get out of here.\n Press [SPACE] to continue."
-            Maintext = font2.render(Textvar, True, (255, 255, 255))
-            screen.blit(Maintext, (SCREEN_WIDTH / 2 - Maintext.get_width() / 2, SCREEN_HEIGHT / 2 - Maintext.get_height() / 2))
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    print ("You pressed Space")
-            
+                    print("space")
+
+
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
                     pygame.quit()
                     sys.exit()
 
         pygame.display.update()
-        screen.fill(BLACK)
