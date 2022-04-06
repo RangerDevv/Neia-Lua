@@ -17,6 +17,9 @@ pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption(SCREEN_TITLE)
 
+# hide the cursor
+pygame.mouse.set_visible(False)
+
 # fonts
 Title_font = pygame.font.match_font('Times New Roman')
 font1 = pygame.font.Font(Title_font, 32)
@@ -40,26 +43,24 @@ while True:
             pygame.quit()
             sys.exit()
 
+
+    screen.fill(BLACK)
+
     # Title
     Title = font1.render("Neia", True, (255, 255, 255))
     screen.blit(Title, (SCREEN_WIDTH / 2 - Title.get_width() / 2, 100))
-    pygame.display.update()
 
     # Content
     Content = font2.render("Welcome to Neia, a text-based adventure game.", True, (255, 255, 255))
     screen.blit(Content, (SCREEN_WIDTH / 2 - Content.get_width() / 2, 200))
-    pygame.display.update()
 
     # Content
     Content = font2.render("[W] Play", True, (255, 255, 255))
     screen.blit(Content, (SCREEN_WIDTH / 2 - Content.get_width() / 2, 300))
-    pygame.display.update()
     Content = font2.render("[Q] Quit", True, (255, 255, 255))
     screen.blit(Content, (SCREEN_WIDTH / 2 - Content.get_width() / 2, 350))
-    pygame.display.update()
     Content = font2.render("[A] Credits", True, (255, 255, 255))
     screen.blit(Content, (SCREEN_WIDTH / 2 - Content.get_width() / 2, 400))
-    pygame.display.update()
 
     # event loop
     for event in pygame.event.get():
@@ -80,3 +81,6 @@ while True:
                 Develpoer = font2.render("Develpoer: Ranger", True, (255, 255, 255))
                 screen.blit(Develpoer, (SCREEN_WIDTH / 2 - Develpoer.get_width() / 2, 200))
                 Helper = font2.render("Helper: Avidcoder123", True, (255, 255, 255))
+    
+    pygame.display.update()
+    
