@@ -66,10 +66,16 @@ def test_room1():
         Quit = font2.render("[Q] Quit", True, (255, 255, 255))
         screen.blit(Quit, (SCREEN_WIDTH / 2 - Quit.get_width() / 2, SCREEN_HEIGHT - 50))
 
+        # the main text
+        Textvar = "You are in a room."
+        Text = font2.render(Textvar, True, (255, 255, 255))
+        screen.blit(Text, (SCREEN_WIDTH / 2 - Text.get_width() / 2, SCREEN_HEIGHT / 2 - Text.get_height() / 2))
+        pygame.display.update()
+
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    print("space")
+                    Textvar = "Meow"
 
 
             if event.type == pygame.KEYDOWN:
